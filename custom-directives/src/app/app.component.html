@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+            <br><br>
+
+            <ul class="list-group">
+                <div *ngIf="onlyOdd">
+                    <li class="list-group-item" [ngClass]="{odd: odd % 2 !== 0}" [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let odd of oddNumbers">
+                        {{ odd }}
+                    </li>
+                </div>
+                <!-- ================================custom strutural directive======================================================== -->
+                <!--appUnless -  will only allow false value,which is the custom strutural directive ,
+        instead of inbuild Structural directive *ngIf - which will allow only true value-->
+                <h3>custom strutural directive</h3>
+                <div *appUnless="onlyOdd">
+                    <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}" *ngFor="let even of evenNumbers">
+                        {{ even }}
+                    </li>
+                </div>
+            </ul>
+            <!-- =============================Basic Directives=========================================================== -->
+
+            <h3>Basic custom Attribute Directives</h3>
+            <p appBasicHighlight>Style me with basic directive!</p>
+            <!-- ================================= Directives with using Renders======================================================= -->
+
+            <br>
+            <h3> custom Attribute Directives with using Renders</h3>
+            <p appRenderHighlight>Style me with directive!</p>
+
+            <!-- ======================================Directives without using Renders================================================== -->
+
+            <h3> custom Attribute Directives without using Renders</h3>
+            <p [appWithOutRenderHighlight]="'red'" defaultColor="yellow">Style me with directive!</p>
+        </div>
+    </div>
+</div>

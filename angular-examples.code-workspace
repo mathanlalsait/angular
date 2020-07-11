@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "reactive-forms"
+		},
+		{
+			"path": "custom-observables"
+		},
+		{
+			"path": "custom-directives"
+		},
+		{
+			"path": "life-cycles"
+		},
+		{
+			"path": "multi-module"
+		},
+		{
+			"path": "authentication"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class=col-md-6>
+        <h3>User Component :</h3>
+    </div>
+</div>
+<p>User with <strong>ID {{ id }}</strong> was loaded()</p>
+<form class="form-horizontal">
+    <div class="form-group row">
+        <label class="col-md-3 my-5 col-form-label text-right">message :</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" #name="ngModel" name="name" [(ngModel)]="message">
+            <br>
+            <button class="btn btn-primary" (click)="sendMessage(message)">Send Message</button>(sending message to appcomponent)
+        </div>
+    </div>
+</form>
