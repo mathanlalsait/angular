@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, Validators } from "@angular/forms";
-import { ValidatePassword } from "./must-match/validate-password";
+import { ValidatePassword } from "./validatePassword/validate-password";
 
 @Component({
   selector: 'app-root',
