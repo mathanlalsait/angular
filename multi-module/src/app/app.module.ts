@@ -3,26 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {PlayersModule} from "./players/players.module";
-import {TeamsModule} from "./teams/teams.module";
-import {PlayersRoutingModule} from "./players/players-routing.module";
-import {SharedModule} from "./shared/shared.module";
-import {ServicesModule} from "./services/services.module";
-import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    TeamsModule,
-    SharedModule,
-    ServicesModule,
-  ],
+    AppRoutingModule, 
+  
+  ],exports :[],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppParentModule { }
