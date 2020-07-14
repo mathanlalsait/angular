@@ -1,34 +1,20 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {PlayersRoutingModule} from "./players/players-routing.module";
-import {TeamsRoutingModule} from "./teams/teams-routing.module";
-import {AppComponent} from "./app.component";
-import {TeamsModule} from "./teams/teams.module";
-import {PlayersModule} from "./players/players.module";
-import {HomeComponent} from "./home/home.component";
-
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { App1SharedModule } from 'projects/app1/src/app/app.module';
+import { App2SharedModule } from 'projects/app2/src/app/app.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'teams',
-    loadChildren: () => TeamsModule,
-  },
-  {
-    path: 'players',
-    loadChildren: () => PlayersModule,
-  },
-
-];
-
+  {path: 'app1', 
+   loadChildren: '../../projects/app1/src/app/app.module#App1SharedModule'},
+  {path: 'app2', 
+   loadChildren: '../../projects/app2/src/app/app.module#App2SharedModule'},
+ // { path: '**', redirectTo: '/app1/one'}
+ ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), 
+     App1SharedModule.forRoot(),
+    App2SharedModule.forRoot()
+    ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-
-}
+export class AppRoutingModule { }
